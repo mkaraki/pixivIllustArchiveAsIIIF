@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    ports:
+      - 8080:80
+    volumes:
+      - /path/to/archive/:/var/www/data:ro
+      - ./_config.php:/var/www/html/_config.php:ro
+
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=toor
+    volumes:
+      - ./db:/data/db

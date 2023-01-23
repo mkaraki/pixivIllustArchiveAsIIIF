@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mongodb/mongodb": "^1.15",
+        "klein/klein": "^2.1",
+        "conlect/image-iiif": "^1.0"
+    }
+}
