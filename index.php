@@ -30,7 +30,24 @@ $klein->respond('GET', '/tags/[:tagname]/artworks', function ($request, $respons
     $service->render(__DIR__ . '/page/illusts.php', ['filter' => ['tags.name' => $request->tagname]]);
 });
 
+$klein->respond('GET', '/tags', function ($request, $response, $service) {
+    $service->render(__DIR__ . '/page/tags.php', []);
+});
+
+$klein->respond('GET', '/viewer', function ($request, $response, $service) {
+    $service->render(__DIR__ . '/page/viewer-artworks.php', ['ep' => 'index.json']);
+});
+
+$klein->respond('GET', '/viewer/artworks', function ($request, $response, $service) {
+    $service->render(__DIR__ . '/page/viewer-artworks.php', ['ep' => 'artwork.json']);
+});
+
+$klein->respond('GET', '/viewer/users/[i:uid]', function ($request, $response, $service) {
+    $service->render(__DIR__ . '/page/viewer-artworks.php', ['ep' => "users/$request->uid.json"]);
+});
+
 require_once __DIR__ . '/iiif/metadata.php';
+require_once __DIR__ . '/iiif/artwork-collection.php';
 
 $klein->respond('GET', '/iiif/[:identifier]/[:region]/[:size]/[:rotation]/[:quality].[:format]', function ($request, $response, $service) {
     $id = $request->identifier;
