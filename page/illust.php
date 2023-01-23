@@ -25,18 +25,12 @@ require_once __DIR__ . '/../_config.php';
   <script>
     const config = {
       id: 'view',
+      selectedTheme: 'dark',
       windows: [{
-        imageToolsEnabled: true,
-        imageToolsOpen: true,
         manifestId: '<?= BASEURL ?>/iiif/<?= $this->id ?>/manifest.json',
+        allowClose: false,
+        maximized: true,
       }],
-      theme: {
-        palette: {
-          primary: {
-            main: '#1967d2',
-          },
-        },
-      },
     };
 
     Mirador.viewer(config, [
