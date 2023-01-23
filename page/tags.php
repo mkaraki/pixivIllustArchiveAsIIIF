@@ -26,7 +26,7 @@ $totalItemCnt = count($tags)
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"><a href="/tags/<?= urlencode($tag) ?>"><?= htmlentities($tag) ?></a></h5>
+              <h5 class="card-title"><a href="/tags/<?= urlencode($tag) ?>/artworks"><?= htmlentities($tag) ?></a></h5>
             </div>
           </div>
         </div>
