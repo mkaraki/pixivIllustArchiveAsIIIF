@@ -1,8 +1,8 @@
 <?php
-$dir = '/mnt/c/temp/pxmeta/rawmeta';
-
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../_config.php';
+
+$dir = ARCHIVEDIR . '/rawmeta';
 
 $client = new MongoDB\Client(MONGO_URL);
 $collection = $client->pixivarchive->illustmetadatas;
