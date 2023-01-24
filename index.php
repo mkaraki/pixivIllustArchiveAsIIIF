@@ -39,7 +39,7 @@ $klein->respond('GET', '/viewer', function ($request, $response, $service) {
 });
 
 $klein->respond('GET', '/viewer/artworks', function ($request, $response, $service) {
-    $service->render(__DIR__ . '/page/viewer-artworks.php', ['ep' => 'artwork.json']);
+    $service->render(__DIR__ . '/page/viewer-artworks.php', ['ep' => 'artworks.json']);
 });
 
 $klein->respond('GET', '/viewer/users/[i:uid]', function ($request, $response, $service) {
