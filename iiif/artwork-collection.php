@@ -49,7 +49,7 @@ $klein->respond('GET', '/iiif/collections/artworks.json', function ($request, $r
             '@id' => BASEURL . '/iiif/' . $meta['id'] . '/manifest.json',
             '@type' => 'sc:Manifest',
             'label' => $meta['title'] . ' - ' . $meta['user']['name'],
-            'thumbnail' => BASEURL . '/iiif/' . $meta['id'] . '/full/full/0/default.json',
+            'thumbnail' => BASEURL . '/iiif/' . $meta['id'] . '_p0/full/full/0/default.json',
         ];
     }
 
@@ -158,7 +158,7 @@ $klein->respond('GET', '/iiif/collections/tags/[:tag].json', function ($request,
             '@id' => BASEURL . '/iiif/' . $meta['id'] . '/manifest.json',
             '@type' => 'sc:Manifest',
             'label' => $meta['title'],
-            'thumbnail' => BASEURL . '/iiif/' . $meta['id'] . '/full/full/0/default.json',
+            'thumbnail' => BASEURL . '/iiif/' . $meta['id'] . '_p0/full/full/0/default.json',
         ];
     }
 
