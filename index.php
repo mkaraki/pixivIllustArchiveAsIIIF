@@ -46,6 +46,14 @@ $klein->respond('GET', '/viewer/users/[i:uid]', function ($request, $response, $
     $service->render(__DIR__ . '/page/viewer-artworks.php', ['ep' => "users/$request->uid.json"]);
 });
 
+$klein->respond('GET', '/stats/tags', function ($request, $response, $service) {
+    $service->render(__DIR__ . '/page/stats-tags.php');
+});
+
+$klein->respond('GET', '/stats/users', function ($request, $response, $service) {
+    $service->render(__DIR__ . '/page/stats-user.php');
+});
+
 require_once __DIR__ . '/iiif/metadata.php';
 require_once __DIR__ . '/iiif/artwork-collection.php';
 
