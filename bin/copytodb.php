@@ -40,7 +40,7 @@ foreach ($files as $file)
 
 	if ($collection->count(['id' => $jsonobj['id']]) > 0)
 	{
-		print("Already in DB\n");
+		print("\r");
 		continue;
 	}
 
